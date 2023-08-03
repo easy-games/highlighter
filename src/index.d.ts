@@ -7,7 +7,7 @@ export type HighlightProps = {
 	customLang?: { [str: string]: string },
 }
 
-export namespace Highlighter {
+declare namespace Highlighter {
 	/**
 	 * Highlights the given textObject with the given props and returns a cleanup function. Highlighting will automatically update when needed, so the cleanup function will disconnect those connections and remove all labels.
 	 */
