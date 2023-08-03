@@ -10,3 +10,31 @@
 
 # VS Code files
 .vscode/*
+
+**.DS_Store
+
+node_modules/
+
+build.rbxl
+build.rbxl.lock
+skyblock.rbxl
+skyblock.rbxl.lock
+
+**.rbxlx
+**.rbxlx.lock
+
+game.rbxl
+game.rbxl.lock
+
+GameAnalyticsSDK/GameAnalytics/Secret.lua
+/.idea/
+/include/
+include/RuntimeLib.lua
+.vscode/settings.json
+
+.tarmac-debug
+tarmac-manifest.toml
+
+.DS_Store
+
+/out

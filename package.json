@@ -1,15 +1,31 @@
 {
-    "name": "@boatbomber/highlighter",
+    "name": "@easy-games/highlighter",
     "version": "0.8.1",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/boatbomber/Highlighter.git"
+        "url": "https://github.com/easy-games/highlighter.git"
     },
     "contributors": [
         "boatbomber"
     ],
+    "files": [
+		"out",
+		"index.d.ts",
+		"globals.d.ts"
+	],
+	"scripts": {
+		"compile": "rbxtsc --verbose --writeOnlyChanged",
+		"prepublishOnly": "npm run compile"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
     "bugs": {
-        "url": "https://github.com/boatbomber/Highlighter/issues"
-    }
+        "url": "https://github.com/easy-games/highlighter/issues"
+    },
+    "devDependencies": {
+		"@rbxts/compiler-types": "^2.0.4-types.0",
+		"@rbxts/types": "^1.0.516"
+	}
 }
