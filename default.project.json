@@ -1,6 +1,9 @@
 {
-	"name": "Highlighter",
-	"tree": {
-		"$path": "src"
-	}
+    "name": "highlighter",
+    "tree": {
+        "$className": "Folder",
+        "out": {
+            "$path": "out"
+        }
+    }
 }

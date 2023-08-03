@@ -10,22 +10,22 @@
         "boatbomber"
     ],
     "files": [
-		"out",
-		"index.d.ts",
-		"globals.d.ts"
-	],
-	"scripts": {
-		"compile": "rbxtsc --verbose --writeOnlyChanged",
-		"prepublishOnly": "npm run compile"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
+        "out",
+        "index.d.ts",
+        "globals.d.ts"
+    ],
+    "scripts": {
+        "compile": "rbxtsc --verbose --writeOnlyChanged",
+        "prepublishOnly": "npm run compile"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
     "bugs": {
         "url": "https://github.com/easy-games/highlighter/issues"
     },
     "devDependencies": {
-		"@rbxts/compiler-types": "^2.0.4-types.0",
-		"@rbxts/types": "^1.0.516"
-	}
+        "@rbxts/compiler-types": "^2.1.1-types.0",
+        "@rbxts/types": "^1.0.516"
+    }
 }
