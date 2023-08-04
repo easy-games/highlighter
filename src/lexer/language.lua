@@ -50,11 +50,11 @@ local language = {
 }
 
 -- Filling up language.libraries.Enum table
-local enumLibraryTable = language.libraries.Enum
+-- local enumLibraryTable = language.libraries.Enum
 
-for _, enum in ipairs(Enum:GetEnums()) do
-	--TODO: Remove tostring from here once there is a better way to get the name of an Enum
-	enumLibraryTable[tostring(enum)] = "Enum"
-end
+-- for _, enum in ipairs(Enum:GetEnums()) do
+-- 	--TODO: Remove tostring from here once there is a better way to get the name of an Enum
+-- 	enumLibraryTable[tostring(enum)] = "Enum"
+-- end
 
 return language
