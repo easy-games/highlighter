@@ -141,8 +141,8 @@ function lexer.scan(s: string)
 						local parent = string.gsub(previousContent2, Cleaner, "")
 						local lib = lua_libraries[parent]
 						if lib and lib[cleanContent] and not string.find(previousContent3, "%.[%s%c]*$") then
-							-- Indexing a builtin lib with existing item, treat as a builtin
-							processedToken = "builtin"
+							-- Indexing a builtin lib with existing item, treat as a func
+							processedToken = "func"
 						else
 							-- Indexing a non builtin, can't be treated as a keyword/builtin
 							processedToken = "iden"
