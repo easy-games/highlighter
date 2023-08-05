@@ -54,8 +54,13 @@ function Highlighter._alignLabels(textObject: types.TextObject)
 		lineLabel.FontFace = labelingInfo.textFont
 		lineLabel.TextSize = labelingInfo.textSize
 		lineLabel.Size = labelingInfo.labelSize
-		lineLabel.Position =
-			UDim2.fromScale(0, labelingInfo.textHeight * (lineNumber - 1) / labelingInfo.innerAbsoluteSize.Y)
+		if lineNumber <= labelingInfo.numLines then
+			lineLabel.Position =
+				UDim2.fromScale(0, labelingInfo.textHeight * (lineNumber - 1) / labelingInfo.innerAbsoluteSize.Y)
+		else
+			lineLabel.Position =
+				UDim2.fromScale(0, 0)
+		end
 	end
 end
 
@@ -246,10 +251,16 @@ function Highlighter.highlight(props: types.HighlightProps): () -> ()
 
 		cleanup()
 	end)
+	local boundsHandled = false
 	connections["TextChanged"] = textObject:GetPropertyChangedSignal("Text"):Connect(function()
+		boundsHandled = true
 		Highlighter._populateLabels(props)
+		Highlighter._alignLabels(textObject)
 	end)
 	connections["TextBoundsChanged"] = textObject:GetPropertyChangedSignal("TextBounds"):Connect(function()
+		boundsHandled = false
+		task.wait()
+		if (boundsHandled) then return end
 		Highlighter._alignLabels(textObject)
 	end)
 	connections["AbsoluteSizeChanged"] = textObject:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
